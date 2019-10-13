@@ -2,6 +2,12 @@
 //!
 //!
 extern crate augorama_derive;
+use augorama_derive::HelloMac;
+
+#[derive(HelloMac)]
+struct Pancakes;
 
 #[test]
-fn make_route_works() {}
+fn make_trait_works() {
+    Pancakes::hiya();
+}
