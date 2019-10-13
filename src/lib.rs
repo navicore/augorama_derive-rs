@@ -6,9 +6,9 @@ extern crate proc_macro;
 // learning todo: ejs remove
 // learning todo: ejs remove
 
+use proc_macro::TokenStream;
 use quote::quote;
 use syn;
-use proc_macro::TokenStream;
 
 #[proc_macro_derive(HelloMacro)]
 pub fn hello_macro_derive(input: TokenStream) -> TokenStream {
