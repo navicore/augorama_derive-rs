@@ -6,7 +6,7 @@ use proc_macro::TokenStream;
 use quote::quote;
 use syn;
 
-fn impl_hello_macro(ast: &syn::DeriveInput) -> TokenStream {
+fn impl_derive_hello_macro(ast: &syn::DeriveInput) -> TokenStream {
     let name = &ast.ident;
     let gen = quote! {
         trait HelloMac {
@@ -28,5 +28,30 @@ pub fn derive_hellomac(input: TokenStream) -> TokenStream {
     let ast = syn::parse(input).unwrap();
 
     // Build the trait implementation
-    impl_hello_macro(&ast)
+    impl_derive_hello_macro(&ast)
+}
+
+fn impl_route_hello_macro(ast: &syn::DeriveInput) -> TokenStream {
+    let name = &ast.ident;
+    let gen = quote! {
+        trait HelloMac {
+            fn hiya();
+        }
+        impl HelloMac for #name {
+            fn hiya() {
+                println!("Hello, Macro! My name is {}", stringify!(#name));
+            }
+        }
+    };
+    gen.into()
+}
+
+#[proc_macro_attribute]
+pub fn route_hello(attr: TokenStream, item: TokenStream) -> TokenStream {
+    // Construct a representation of Rust code as a syntax tree
+    // that we can manipulate
+    let ast = syn::parse(item).unwrap();
+
+    // Build the trait implementation
+    impl_route_hello_macro(&ast)
 }

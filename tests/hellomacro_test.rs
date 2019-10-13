@@ -8,6 +8,6 @@ use augorama_derive::HelloMac;
 struct Pancakes;
 
 #[test]
-fn make_trait_works() {
+fn derive_trait_says_hiya() {
     Pancakes::hiya();
 }
