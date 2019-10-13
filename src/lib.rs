@@ -8,6 +8,7 @@ extern crate proc_macro;
 
 use quote::quote;
 use syn;
+use proc_macro::TokenStream;
 
 #[proc_macro_derive(HelloMacro)]
 pub fn hello_macro_derive(input: TokenStream) -> TokenStream {
