@@ -47,7 +47,7 @@ fn impl_route_hello_macro(ast: &syn::DeriveInput) -> TokenStream {
 }
 
 #[proc_macro_attribute]
-pub fn route_hello(attr: TokenStream, item: TokenStream) -> TokenStream {
+pub fn route_hello(_attr: TokenStream, item: TokenStream) -> TokenStream {
     // Construct a representation of Rust code as a syntax tree
     // that we can manipulate
     let ast = syn::parse(item).unwrap();
