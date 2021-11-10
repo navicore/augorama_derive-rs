@@ -4,7 +4,6 @@ extern crate proc_macro;
 
 use proc_macro::TokenStream;
 use quote::quote;
-use syn;
 
 fn impl_derive_hello_macro(ast: &syn::DeriveInput) -> TokenStream {
     let name = &ast.ident;
