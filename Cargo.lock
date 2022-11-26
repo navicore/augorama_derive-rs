@@ -44,7 +44,7 @@ dependencies = [
  "riker-patterns",
  "serde 1.0.147",
  "serde_json",
- "syn 0.14.9",
+ "syn 0.15.44",
  "tokio",
  "warp",
 ]
@@ -1224,17 +1224,6 @@ checksum = "02e2d2db9033d13a1567121ddd7a095ee144db4e1ca1b1bda3419bc0da294ebd"
 dependencies = [
  "libc",
  "winapi",
-]
-
-[[package]]
-name = "syn"
-version = "0.14.9"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "261ae9ecaa397c42b960649561949d69311f08eeaea86a65696e6e46517cf741"
-dependencies = [
- "proc-macro2 0.4.30",
- "quote 0.6.13",
- "unicode-xid 0.1.0",
 ]
 
 [[package]]
